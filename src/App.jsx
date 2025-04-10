@@ -11,7 +11,7 @@ return (
      <Routes>
       <Route element={<AppLayout />}>
       <Route path="/" element={<WorksPage />} />
-      <Route path="/works/:id" element={<SingleWork />} />
+      <Route path="/:id" element={<SingleWork />} />
       </Route>
      </Routes>
      </BrowserRouter>
