@@ -1,23 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@400;600&display=swap');
+
+:root {
+  --giallo-ocra: #C99700;
+  --grigio-chiaro: #D3D3D3;
+  --bianco: #FFFFFF;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Raleway', sans-serif;
+  color: #333;
+  background-color: var(--bianco);
+}
+
 .container {
-    max-width: 100%;
-    width: 80%;
-    margin: 0 auto;
+  max-width: 100%;
+  width: 80%;
+  margin: 0 auto;
 }
 
-
-/* card */
-.card-image {
-  height: 200px;
-  object-fit: cover;
-  width: 100%;
+/*header*/
+.header,
+.footer {
+  background-color: var(--giallo-ocra);
+  padding: 1rem 0;
 }
 
+/*card*/
 .card-image {
   height: 200px;
   object-fit: cover;
@@ -29,36 +43,132 @@
   overflow: hidden;
   transition: transform 0.3s ease;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-
-  &:hover {
-    transform: translateY(-5px);
-  }
-
-  .card-body {
-    text-align: center;
-    background-color: #fff;
-    color: #333;
-  }
-
-  .card-title {
-    font-family: 'Playfair Display', serif;
-    color: #C99700;
-    font-size: 1.2rem;
-  }
-
-  .card-text {
-    font-size: 0.95rem;
-  }
-
-  .btn-warning {
-    background-color: #C99700;
-    border: none;
-    color: white;
-
-    &:hover {
-      background-color: darken(#C99700, 10%);
-      transform: scale(1.05);
-    }
-  }
 }
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-body {
+  text-align: center;
+  background-color: #fff;
+  color: #333;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  color: var(--giallo-ocra);
+  font-size: 1.8rem;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+.btn-warning {
+  background-color: var(--giallo-ocra);
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: #a77f00;
+  transform: scale(1.05);
+}
+
+/*show*/
+.work-details {
+  background-color: #e6e6e6;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.work-details h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--giallo-ocra);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.work-details h5 {
+  color: #a77f00;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.work-details p {
+  margin-bottom: 0.5rem;
+}
+
+.work-details .lead {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.work-details img {
+  max-height: 400px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.work-details .btn-warning {
+  background-color: var(--giallo-ocra);
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.work-details .btn-warning:hover {
+  background-color: #a77f00;
+  transform: scale(1.05);
+}
+
+.back-icon {
+  color: var(--giallo-ocra);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.back-icon:hover {
+  color: #a77f00;
+  transform: scale(1.1);
+}
+
+.work-details img {
+  object-fit: contain; 
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: black; /* Colore primario */
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 9999; /* Per assicurarsi che l'icona sia sopra gli altri contenuti */
+  transition: all 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  color: #979795; /* Colore più scuro al passaggio del mouse */
+  transform: scale(1.1);
+}
+
+
 

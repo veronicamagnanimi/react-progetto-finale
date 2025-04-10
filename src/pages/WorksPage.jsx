@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import WorkCard from "../components/WorkCard";
+import Icons from "../components/Icons";
 
 const WorksPage = () => {
   const [works, setWorks] = useState([]);
@@ -28,6 +29,7 @@ const WorksPage = () => {
         ))}
       </div>
       </div>
+      <Icons />
     </>
   );
 };
