@@ -1,5 +1,3 @@
-
-
 const Icons = () => {
   const scrollToTop = () => {
     window.scrollTo({

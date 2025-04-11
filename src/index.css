@@ -29,6 +29,7 @@ body {
 .footer {
   background-color: var(--giallo-ocra);
   padding: 1rem 0;
+  font-family: 'Raleway', sans-serif;
 }
 
 /*card*/
@@ -156,19 +157,39 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  color: black; /* Colore primario */
+  color: black; 
   background-color: transparent;
   border: none;
   font-size: 2rem;
   cursor: pointer;
-  z-index: 9999; /* Per assicurarsi che l'icona sia sopra gli altri contenuti */
+  z-index: 9999; 
   transition: all 0.3s ease;
 }
 
 .scroll-to-top:hover {
-  color: #979795; /* Colore più scuro al passaggio del mouse */
+  color: #979795; 
   transform: scale(1.1);
 }
 
+/*hero*/
+.hero-banner {
+  max-height: 400px;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(70%);
+}
 
+.hero-text {
+  z-index: 2;
+  padding: 1rem;
+  font-family: 'Playfair Display', 'serif';
+}
+
+/*footer*/
+.footer {
+  background-color: var(--giallo-ocra);
+  padding: 1.5rem 0;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
 

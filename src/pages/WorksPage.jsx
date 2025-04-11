@@ -18,8 +18,16 @@ const WorksPage = () => {
 
   return (
     <>
-    <div className="container">
-      <h1 className="text-center my-4">Tutte le opere</h1>
+     <div className="hero-img position-relative text-white text-center">
+  <img src="/images/hero.png" alt="hero" className="img-fluid w-100 hero-banner" />
+
+  <div className="hero-text position-absolute top-50 start-50 translate-middle">
+    <h1>"Dipingerò i tuoi occhi quando conoscerò la tua anima"</h1>
+    <h5>Amedeo Modigliani</h5>
+  </div>
+</div>
+    <div className="container mt-4">
+      <h1 className="text-center mb-4 title-section">Quadri</h1>
 
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
         {works.map((work) => (
@@ -28,8 +36,9 @@ const WorksPage = () => {
           </div>
         ))}
       </div>
-      </div>
-      <Icons />
+    </div>
+
+    <Icons />
     </>
   );
 };
