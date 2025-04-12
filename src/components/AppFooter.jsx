@@ -6,7 +6,7 @@ const AppFooter = () => {
           © {new Date().getFullYear()} L' Arte che Resta – Tutti i diritti
           riservati
         </p>
-        <p style={{ fontSize: "0.9rem" }}>Realizzato con ❤ per l’arte</p>
+        <p style={{ fontSize: "0.9rem" }}>Realizzato con ❤ per l’ arte</p>
       </div>
     </footer>
   );
