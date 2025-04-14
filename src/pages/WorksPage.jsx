@@ -10,7 +10,7 @@ const WorksPage = () => {
   const [searchError, setSearchError] = useState("");
   const [loading, setLoading] = useState(false);
   const [initialLoad, setInitialLoad] = useState(true);
-  const [searchClicked, setSearchClicked] = useState(false);  
+  const [searchClicked, setSearchClicked] = useState(false);
 
   const apiLaravel = import.meta.env.VITE_API_URL;
 
@@ -41,24 +41,24 @@ const WorksPage = () => {
   };
 
   useEffect(() => {
-    loadWorks("");  // carica tutte le opere all'inizio
+    loadWorks(""); // carica tutte le opere all'inizio
   }, []);
 
   const handleSearch = () => {
     if (search.trim() === "") {
       setSearchError("Inserisci un titolo da cercare.");
       setNoResults(false);
-      setSearchClicked(true);  // mostra il pulsante dopo la ricerca
+      setSearchClicked(true); // mostra il pulsante dopo la ricerca
       return;
     }
     loadWorks(search);
-    setSearchClicked(true);  // mostra il pulsante dopo la ricerca
+    setSearchClicked(true); // mostra il pulsante dopo la ricerca
   };
 
   const handleResetSearch = () => {
     setSearch("");
-    loadWorks("");  // carica tutte le opere
-    setSearchClicked(false);  // nascondi il pulsante quando resetti la ricerca
+    loadWorks(""); // carica tutte le opere
+    setSearchClicked(false); // nascondi il pulsante quando resetti la ricerca
   };
 
   return (
@@ -79,18 +79,27 @@ const WorksPage = () => {
         <h1 className="text-center mb-4 title-section">Quadri</h1>
 
         {/* Campo di ricerca */}
-        <div className="d-flex justify-content-center my-3">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault(); // evita il refresh della pagina
+            handleSearch(); // richiama la tua funzione di ricerca
+          }}
+          className="d-flex justify-content-center my-3"
+        >
           <input
             className="form-control border border-secondary text-secondary w-25 m3"
             type="search"
             placeholder="Cerca un quadro o un pittore"
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => {
+              setSearch(e.target.value);
+              setSearchError(""); // cancella eventuale errore mentre scrivi
+            }}
           />
-          <button className="btn btn-warning ms-2" onClick={handleSearch}>
+          <button className="btn btn-warning ms-2" type="submit">
             Cerca
           </button>
-        </div>
+        </form>
 
         {/* Messaggio di errore */}
         {searchError && (
@@ -135,10 +144,3 @@ const WorksPage = () => {
 };
 
 export default WorksPage;
-
-
-
-
-
-
-

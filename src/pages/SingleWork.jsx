@@ -75,6 +75,21 @@ const SingleWork = () => {
         </p>
 
         <Icons />
+
+{/* bottone 3d */}
+        <div className="text-center mt-4">
+  <button
+    type="button"
+    className="btn btn-outline-dark"
+    data-bs-toggle="modal"
+    data-bs-target="#modal3D"
+  >
+    Visiona in 3D
+  </button>
+</div>
+
+
+
       </div>
 
       {/* Modale per la descrizione del pittore */}
@@ -113,6 +128,43 @@ const SingleWork = () => {
           </div>
         </div>
       </div>
+
+{/* Modale 3d */}
+      <div
+  className="modal fade"
+  id="modal3D"
+  tabIndex="-1"
+  aria-labelledby="modal3DLabel"
+  aria-hidden="true"
+>
+  <div className="modal-dialog modal-lg modal-dialog-centered">
+    <div className="modal-content p-3">
+      <div className="modal-header">
+        <h5 className="modal-title" id="modal3DLabel">
+          Visione 3D: {singleWork.name}
+        </h5>
+        <button
+          type="button"
+          className="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Chiudi"
+        ></button>
+      </div>
+      <div className="modal-body text-center">
+        <div className="image-3d-container">
+          <img
+            src={imageUrl}
+            alt={singleWork.name}
+            className="img-fluid image-3d"
+            style={{ maxHeight: "500px" }}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     </>
   );
 };
